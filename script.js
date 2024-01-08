@@ -4,11 +4,11 @@ downloadBtn = document.querySelector('.dowload'),
 inputlanguage = document.querySelector('#language'),
 clearBtn = document.querySelector('.clear');
 
+
 let SpeechRecognition = 
-window.SpeechRecogition || window.webkitSpeechRecognition,
+window.SpeechRecognition || window.webkitSpeechRecognition,
 recognition,
 recording = false;
-
 function populatelanguages(){
     languages.forEach((lang) => {
         const option = document.createElement('option');
@@ -28,11 +28,11 @@ function speechToText(){
         recordBtn.classList.add('recording');
         recordBtn.querySelector('p').innerHTML = "Listening...";
         recognition.start();
-        recognition.onresult = (event) => {
+        recognition.onresult = (event) =>{
             const speechResult = event.results[0][0].transcript;
 
-            if(event.results[0].isFinal){
-                result.innerHTML == ' ' + speechResult;
+            if (event.results[0].isFinal){
+                result.innerHTML += ' ' + speechResult;
                 result.querySelector('p').remove();
             } else{
                 if (!document.querySelector('.interim')){
@@ -49,7 +49,7 @@ function speechToText(){
             speechToText();
         };
 
-        recognition.onerror = (event) => {
+        recognition.onerror = (event) =>{
             stopRecording();
             if(event.error === "no-speech"){
                 alert('No speech detected. stopping...');                
@@ -72,11 +72,11 @@ function speechToText(){
     }
 }
 
-recordBtn.addEventListener("click", () => {
+recordBtn.addEventListener("click", ()=>{
     if(!recording){
         speechToText();
         recording = true;
-    } else{
+    }else{
         stopRecording();
     }
 });
