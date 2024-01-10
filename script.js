@@ -1,6 +1,6 @@
 const recordBtn = document.querySelector('.record'),
 result = document. querySelector('.result'),
-downloadBtn = document.querySelector('.dowload'),
+downloadBtn = document.querySelector('.download'),
 inputlanguage = document.querySelector('#language'),
 clearBtn = document.querySelector('.clear');
 
