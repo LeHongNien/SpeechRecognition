@@ -1,4 +1,4 @@
-# Speech Recognition using ionicons
+# Speech Recognition with ionicons
 Programmed to recognize speech and display as text, downloadable as .txt
 
 
